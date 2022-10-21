@@ -1,0 +1,31 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+```{r}
+library(raster)
+```
+
+```{r}
+r = raster("Map2.tif")
+```
+
+```{r}
+library(tmap)
+tm_shape(r) + tm_raster(style= "sd", n = 10 , palette = "Greys")
+```
+```{r}
+elevatcourse <- aggregate(r, fact=100, fun=mean, expand=TRUE)
+tm_shape(elevatcourse) + tm_raster(style= "cont") + tm_legend(outside = TRUE)
+```
+
+
+```{r}
+proj4string(r)
+slope <- terrain(r, opt="slope", unit="radians", neighbors=8)
+tm_shape(slope) + tm_raster() + tm_legend(outside = TRUE)
+
+aspect <- terrain(r, opt="aspect", unit="radians", neighbors=8)
+tm_shape(aspect) + tm_raster() + tm_legend(outside = TRUE)
+```
+
