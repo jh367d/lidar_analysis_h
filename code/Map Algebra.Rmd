@@ -18,6 +18,10 @@ tm_shape(r) + tm_raster(style= "sd", n = 10 , palette = "Greys")
 elevatcourse <- aggregate(r, fact=100, fun=mean, expand=TRUE)
 tm_shape(elevatcourse) + tm_raster(style= "cont") + tm_legend(outside = TRUE)
 ```
+```{r}
+elevatcourse <- disaggregate(r, fact=2)
+tm_shape(elevatcourse) + tm_raster(style= "cont") + tm_legend(outside = TRUE)
+```
 
 
 ```{r}
