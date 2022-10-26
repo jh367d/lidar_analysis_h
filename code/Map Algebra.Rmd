@@ -23,6 +23,15 @@ elevatcourse <- disaggregate(r, fact=2)
 tm_shape(elevatcourse) + tm_raster(style= "cont") + tm_legend(outside = TRUE)
 ```
 
+```{r}
+proj4string(r)
+proj4string(r) <- CRS("+proj=utm +zone=19 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs")
+```
+```{r}
+slope <- terrain(r, opt="slope", unit="radians", neighbors=8)
+tm_shape(slope) + tm_raster() + tm_legend(outside = TRUE)
+```
+
 
 ```{r}
 proj4string(r)
