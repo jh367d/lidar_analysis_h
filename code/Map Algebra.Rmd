@@ -41,4 +41,8 @@ tm_shape(slope) + tm_raster() + tm_legend(outside = TRUE)
 aspect <- terrain(r, opt="aspect", unit="radians", neighbors=8)
 tm_shape(aspect) + tm_raster() + tm_legend(outside = TRUE)
 ```
+```{r}
+shade <- hillShade(slope, aspect)
+tm_shape(shade) +tm_raster(style="cont", palette = "Greys") +tm_legend(show=FALSE)
+```
 
