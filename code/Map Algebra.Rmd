@@ -45,4 +45,9 @@ tm_shape(aspect) + tm_raster() + tm_legend(outside = TRUE)
 shade <- hillShade(slope, aspect)
 tm_shape(shade) +tm_raster(style="cont", palette = "Greys") +tm_legend(show=FALSE)
 ```
+```{r}
+library(spatialEco)
+vrm(r, s = 3, file.name = NULL,)
+
+```
 
