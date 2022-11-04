@@ -51,3 +51,8 @@ vrm(r, s = 3, file.name = NULL,)
 
 ```
 
+```{r}
+library(lidR)
+
+```
+
