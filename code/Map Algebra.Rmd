@@ -62,4 +62,8 @@ sa(r) # average surface roughness
 svk(r) # reduced valley depth
 ssc(r) # mean summit curvature
 ```
+```{r}
+#root mean square roughness of a surface 
+sq(r)
+```
 
