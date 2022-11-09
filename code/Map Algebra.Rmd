@@ -52,7 +52,7 @@ vrm(r, s = 3, file.name = NULL,)
 ```
 
 ```{r}
-library(lidR)
-
+library(spatialEco)
+tri(r, s =c(3,5), exact = TRUE, file.name = NULL,)
 ```
 
