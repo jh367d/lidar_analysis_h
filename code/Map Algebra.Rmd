@@ -56,3 +56,10 @@ library(spatialEco)
 tri(r, s =c(3,5), exact = TRUE, file.name = NULL,)
 ```
 
+```{r}
+library(geodiv)
+sa(r) # average surface roughness
+svk(r) # reduced valley depth
+ssc(r) # mean summit curvature
+```
+
