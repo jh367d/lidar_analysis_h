@@ -66,4 +66,7 @@ ssc(r) # mean summit curvature
 #root mean square roughness of a surface 
 sq(r)
 ```
+```{r}
+surface_area(r)
+```
 
