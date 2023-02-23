@@ -1,0 +1,18 @@
+---
+title: "avg slope"
+author: "Jack"
+date: "23/02/2023"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(raster)
+r = raster("Map2.tif")
+```
+
+
+T
