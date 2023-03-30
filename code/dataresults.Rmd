@@ -34,4 +34,19 @@ summarise(canopydifftri2,
 #remove na values
 summarise(canopydifftri2, mean.TRI = mean(TRI, na.rm = TRUE))
 ```
+```{r}
+summarise(canopydifftri2, mean.canopydiff = mean(canopydiff, na.rm = TRUE))
+```
+
+#sample size with na removed 
+```{r}
+length(canopydifftri2$TRI[!is.na(canopydifftri2$TRI)])
+```
+#396430 now, so 3570 na values in TRI data
+
+```{r}
+length(canopydifftri2$canopydiff[!is.na(canopydifftri2$canopydiff)])
+```
+
+#392584 now , so 7416 na values in canopy difference
 
