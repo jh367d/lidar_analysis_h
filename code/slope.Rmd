@@ -11,8 +11,15 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r}
 library(raster)
-r = raster("Map2.tif")
+library(sp)
+library(rgdal)
 ```
 
 
-T
+```{r}
+DEM <- raster(paste0(wd, "/Downloads/NEON-DS-Field-Site-Spatial-Data/SJER/DigitalTerrainModel/SJER2013_DTM.tif"))
+```
+```{r}
+DEM
+```
+
