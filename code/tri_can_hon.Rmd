@@ -14,3 +14,12 @@ goon_tri_canopycsv <- read.csv("~/Documents/R/hons_local_r/goon_tri_canopycsv.cs
  View(goon_tri_canopycsv)
 ```
 
+
+
+#DATA MANIPULATION
+#SUBSETTING DATA
+```{r}
+library(dplyr) 
+goon_tri_subset1 <- select(goon_tri_canopycsv,tri_goon, canopydiff)
+```
+
