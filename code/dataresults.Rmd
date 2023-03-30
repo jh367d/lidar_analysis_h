@@ -57,20 +57,11 @@ length(canopydifftri2$canopydiff[!is.na(canopydifftri2$canopydiff)])
 ```
 
 
-
-
-
+#test plot
 ```{r}
-summarise(canopydifftri2,
-  mean.TRI = mean(TRI), # mean
-  min.TRI = min(TRI), # minimum
-  max.TRI = max(TRI), # maximum
-  med.TRI = median(TRI), # median
-  sd.TRI = sd(TRI), # standard deviation
-  var.TRI = var(TRI), # variance
-  n.TRI = n(), # sample size
-  se.TRI = sd.TRI / sqrt(n.TRI), # standard error
-  IQR.TRI = IQR(TRI)
-) # interquartile range
+plot(canopydiff ~ TRI, data = canopydifftri2)
 ```
+#i.e can see some clear outliers eg.1200 tri and 1000m canopy difference which is not really posible 
+
+
 
