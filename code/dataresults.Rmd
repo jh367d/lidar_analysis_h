@@ -50,3 +50,27 @@ length(canopydifftri2$canopydiff[!is.na(canopydifftri2$canopydiff)])
 
 #392584 now , so 7416 na values in canopy difference
 
+
+
+```{r}
+ is.na(canopydifftri2)
+```
+
+
+
+
+
+```{r}
+summarise(canopydifftri2,
+  mean.TRI = mean(TRI), # mean
+  min.TRI = min(TRI), # minimum
+  max.TRI = max(TRI), # maximum
+  med.TRI = median(TRI), # median
+  sd.TRI = sd(TRI), # standard deviation
+  var.TRI = var(TRI), # variance
+  n.TRI = n(), # sample size
+  se.TRI = sd.TRI / sqrt(n.TRI), # standard error
+  IQR.TRI = IQR(TRI)
+) # interquartile range
+```
+
