@@ -10,8 +10,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r}
-goon_tri_canopycsv <- read.csv("~/Documents/R/hons_local_r/goon_tri_canopycsv.csv")
- View(goon_tri_canopycsv)
+tridiffallsites <- read.csv("~/Documents/R/hons_local_r/tridiffallsites.csv")
+ View(tridiffallsites)
 ```
 
 
@@ -21,5 +21,24 @@ goon_tri_canopycsv <- read.csv("~/Documents/R/hons_local_r/goon_tri_canopycsv.cs
 ```{r}
 library(dplyr) 
 goon_tri_subset1 <- select(goon_tri_canopycsv,tri_goon, canopydiff)
+```
+
+#Summarising the data
+```{r}
+
+library(dplyr) 
+#diff
+
+
+summarise(goon_tri_subset1,
+  min.tri_goon = min(tri_goon), # minimum
+  max.tri_goon = max(tri_goon), # maximum
+  med.tri_goon = median(tri_goon), # median
+  sd.tri_goon = sd(tri_goon), # standard deviation
+  var.tri_goon = var(tri_goon), # variance
+  n.tri_goon = n(), # sample size
+  se.tri_goon = sd.tri_goon / sqrt(n.tri_goon), # standard error
+  IQR.tri_goon = IQR(tri_goon)
+) # interquartile range
 ```
 
