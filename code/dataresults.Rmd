@@ -1,0 +1,33 @@
+---
+title: "dataprep"
+author: "Jack"
+date: "2023-02-29"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+canopydifftri <- read_excel("~/Documents/R/hons_local_r/canopydifftri.xlsx", 
+                            col_types = c("text", "numeric", "numeric"))
+```
+```{r}
+View(canopydifftri2)
+```
+
+```{r}
+summarise(canopydifftri2, Mean.TRI = mean(TRI))
+```
+```{r}
+summarise(canopydifftri2,
+  mean.activity = mean(TRI), # mean
+  min.Activity = min(TRI), # minimum
+  max.Activity = max(TRI), # maximum
+  med.Activity = median(TRI), # median
+  sd.Activity = sd(TRI), # standard deviation
+  var.Activity = var(TRI), # variance
+) # interquartile range
+```
+
