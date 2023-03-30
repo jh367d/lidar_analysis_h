@@ -30,4 +30,8 @@ summarise(canopydifftri2,
   var.Activity = var(TRI), # variance
 ) # interquartile range
 ```
+```{r}
+#remove na values
+summarise(canopydifftri2, mean.TRI = mean(TRI, na.rm = TRUE))
+```
 
