@@ -105,4 +105,20 @@ mean(canopy_nar$TRI)
 ```{r}
 boxplot(canopy_nar$TRI)
 ```
+```{r}
+summary(canopy_nar$TRI)
+```
+#i.e huge max value of 1327.4140 TRI
+
+```{r}
+boxplot.stats(canopy_nar$TRI)$out
+```
+```{r}
+canopy_nar %>%
+  ggplot(aes(x=canopydiff, y=TRI)) +
+  geom_point()
+
+```
+#i.e 2 key outliers in difference and tri 
+
 
