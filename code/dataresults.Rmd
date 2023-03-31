@@ -91,10 +91,13 @@ levels(canopydifftri2$ID)
 
 #missing data- will exclude na values as na don't mean anything for this data as tri or height difference can't be na it would be 0 or -0.1 etc.
 ```{r}
-canopydifftri2 %>%
-  select(ID, TRI, canopydiff) %>%
-  na.omit()
+canopy_nar <- na.omit(canopydifftri2)
 
 ```
 # so now 389,014 data points from 400,000 so only na 10986 values
+
+```{r}
+#getting real results now
+mean(canopy_nar$TRI)
+```
 
