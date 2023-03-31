@@ -63,5 +63,15 @@ plot(canopydiff ~ TRI, data = canopydifftri2)
 ```
 #i.e can see some clear outliers eg.1200 tri and 1000m canopy difference which is not really posible 
 
+#so need to clean this data
+```{r}
+glimpse(canopydifftri2)
+```
+
+```{r}
+#change ID data type to be a category
+class(canopydifftri2$ID)
+unique(canopydifftri2$ID)
+```
 
 
