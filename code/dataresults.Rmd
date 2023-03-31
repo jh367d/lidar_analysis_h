@@ -76,6 +76,11 @@ unique(canopydifftri2$ID)
 ```
 
 ```{r}
-#change ID data type to be a category
+#change ID data type to be a factor
+canopydifftri2$ID <- as.factor(canopydifftri2$ID)
 ```
+```{r}
+class(canopydifftri2$ID)
+```
+#now a factor 
 
