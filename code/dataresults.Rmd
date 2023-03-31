@@ -87,5 +87,14 @@ class(canopydifftri2$ID)
 levels(canopydifftri2$ID)
 ```
 
-#i.e no order sites as factor 
+#i.e no order in sites as factor 
+
+#missing data- will exclude na values as na don't mean anything for this data as tri or height difference can't be na it would be 0 or -0.1 etc.
+```{r}
+canopydifftri2 %>%
+  select(ID, TRI, canopydiff) %>%
+  na.omit()
+
+```
+# so now 389,014 data points from 400,000 so only na 10986 values
 
