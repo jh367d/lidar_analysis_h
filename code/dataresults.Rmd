@@ -69,9 +69,13 @@ glimpse(canopydifftri2)
 ```
 
 ```{r}
-#change ID data type to be a category
+#ID data type needs changing 
 class(canopydifftri2$ID)
 unique(canopydifftri2$ID)
+
 ```
 
+```{r}
+#change ID data type to be a category
+```
 
