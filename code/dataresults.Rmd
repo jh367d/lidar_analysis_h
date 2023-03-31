@@ -94,10 +94,15 @@ levels(canopydifftri2$ID)
 canopy_nar <- na.omit(canopydifftri2)
 
 ```
-# so now 389,014 data points from 400,000 so only na 10986 values
+# so now 389,014 data points from 400,000 so only 10986 na values
 
 ```{r}
 #getting real results now
 mean(canopy_nar$TRI)
+```
+
+#now outliers need removing 
+```{r}
+boxplot(canopy_nar$TRI)
 ```
 
