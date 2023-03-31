@@ -83,4 +83,9 @@ canopydifftri2$ID <- as.factor(canopydifftri2$ID)
 class(canopydifftri2$ID)
 ```
 #now a factor 
+```{r}
+levels(canopydifftri2$ID)
+```
+
+#i.e no order sites as factor 
 
