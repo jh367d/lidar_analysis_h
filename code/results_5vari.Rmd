@@ -115,3 +115,20 @@ summary(canopy_nar$dem_error)
 #-65.49298  -0.04504   0.09900   0.02319   0.16901 221.08600 
 
 
+
+```{r}
+std <- function(x) sd(x)/sqrt(length(x))
+```
+
+```{r}
+std(canopy_nar$dem_error )
+```
+#sd canopy_nar$dem_error 0.003433617
+
+```{r}
+print(sqrt(sum((canopy_nar$dem_error - mean(canopy_nar$dem_error)) ^ 2/(length(canopy_nar$dem_error) - 1)))
+      /sqrt(length(canopy_nar$dem_error)))
+```
+#se  canopy_nar$dem_error  0.003433617
+
+
