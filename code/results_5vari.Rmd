@@ -1,0 +1,17 @@
+---
+title: "resulst_5vari"
+author: "Jack"
+date: "2023-02-04"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+allsites4a <- read_excel("~/Documents/R/hons_local_r/allsites4a.xlsx")
+View(allsites4a) 
+```
+
+

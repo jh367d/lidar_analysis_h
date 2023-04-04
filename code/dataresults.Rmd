@@ -119,6 +119,9 @@ canopy_nar %>%
   geom_point()
 
 ```
-#i.e 2 key outliers in difference and tri 
+#i.e  key outliers in difference and tri 
 
-
+```{r}
+boxplot(canopy_nar$canopydiff)
+```
+#again same for difference in canopy 
