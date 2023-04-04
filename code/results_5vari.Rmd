@@ -155,3 +155,24 @@ std(canopy_nar$tri )
 
 
 
+
+```{r}
+hist(canopy_nar$tri, xlab = "tri", main = NULL)
+```
+```{r}
+hist(canopy_nar$avg_1st_return, xlab = "avg_1st_return", main = NULL)
+```
+
+```{r}
+hist(canopy_nar$fpc_diff, xlab = "fpc_diff", main = NULL)
+```
+
+```{r}
+hist(canopy_nar$canopy_diff, xlab = "canopy_diff", main = NULL)
+```
+
+```{r}
+hist(canopy_nar$dem_error, xlab = "dem_error", main = NULL)
+
+```
+
