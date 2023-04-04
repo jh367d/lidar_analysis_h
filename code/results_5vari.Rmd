@@ -82,3 +82,36 @@ canopy_nar %>%
   geom_point()
 ```
 
+
+```{r}
+summary(canopy_nar$tri)
+```
+#Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+#0.1115  0.4104  0.4857  0.4692  0.5458  0.8814 
+
+```{r}
+summary(canopy_nar$canopy_diff)
+```
+#Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+#-67.235   0.000   0.008   1.485   1.241  63.903 
+
+
+```{r}
+summary(canopy_nar$fpc_diff)
+```
+# Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+#-100.000    0.000    0.000    1.648    1.000  100.000 
+
+```{r}
+summary(canopy_nar$avg_1st_return)
+```
+# Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+# 0.000   1.111   1.444   1.975   2.222  26.889 
+
+```{r}
+summary(canopy_nar$dem_error)
+```
+#Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
+#-65.49298  -0.04504   0.09900   0.02319   0.16901 221.08600 
+
+
