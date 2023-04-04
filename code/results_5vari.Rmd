@@ -41,3 +41,18 @@ class(allsites4a$ID)
 
 #now ID is factor
 
+```{r}
+levels(allsites4a$ID)
+```
+#i.e no order in sites as factor 
+
+#missing data- will exclude na values as na don't mean anything for this data as tri or height difference can't be na it would be 0 or -0.1 etc.
+
+```{r}
+allsites4a_na <- na.omit(allsites4a)
+```
+
+```{r}
+length(allsites4a_na$ID)
+```
+#i.e 399997 results so 3 na values removed (also shows good quality data as very little na values)
