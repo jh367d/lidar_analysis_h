@@ -15,3 +15,29 @@ View(allsites4a)
 ```
 
 
+```{r}
+glimpse(allsites4a)
+```
+```{r}
+class(allsites4a$ID)
+```
+
+#is character change to 
+
+```{r}
+unique(allsites4a$ID)
+```
+
+#change ID to factor 
+
+```{r}
+allsites4a$ID <- as.factor(allsites4a$ID)
+```
+
+
+```{r}
+class(allsites4a$ID)
+```
+
+#now ID is factor
+
