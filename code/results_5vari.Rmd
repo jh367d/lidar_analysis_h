@@ -62,3 +62,11 @@ length(canopy_nar$ID)
 mean(canopy_nar$tri)
 ```
 #i.e 0.4691957 getting real values now 
+
+
+```{r}
+canopy_nar %>%
+  ggplot(aes(x=canopy_diff, y=tri)) +
+  geom_point()
+```
+
