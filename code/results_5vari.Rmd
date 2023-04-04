@@ -70,3 +70,15 @@ canopy_nar %>%
   geom_point()
 ```
 
+```{r}
+canopy_nar %>%
+  ggplot(aes(x=dem_error, y=tri)) +
+  geom_point()
+```
+
+```{r}
+canopy_nar %>%
+  ggplot(aes(x=fpc_diff, y=tri)) +
+  geom_point()
+```
+
