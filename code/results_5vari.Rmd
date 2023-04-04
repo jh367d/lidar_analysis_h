@@ -129,6 +129,29 @@ std(canopy_nar$dem_error )
 print(sqrt(sum((canopy_nar$dem_error - mean(canopy_nar$dem_error)) ^ 2/(length(canopy_nar$dem_error) - 1)))
       /sqrt(length(canopy_nar$dem_error)))
 ```
-#se  canopy_nar$dem_error  0.003433617
+#se other method  canopy_nar$dem_error  0.003433617
+
+```{r}
+std(canopy_nar$avg_1st_return )
+```
+#canopy_nar$avg_1st_return )
+
+```{r}
+std(canopy_nar$fpc_diff )
+```
+#0.01605804
+
+
+```{r}
+std(canopy_nar$canopy_diff )
+```
+#0.006836824
+
+
+```{r}
+std(canopy_nar$tri )
+```
+#0.0001905845
+
 
 
