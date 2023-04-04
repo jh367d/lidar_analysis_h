@@ -49,10 +49,16 @@ levels(allsites4a$ID)
 #missing data- will exclude na values as na don't mean anything for this data as tri or height difference can't be na it would be 0 or -0.1 etc.
 
 ```{r}
-allsites4a_na <- na.omit(allsites4a)
+canopy_nar <- na.omit(allsites4a)
 ```
 
 ```{r}
-length(allsites4a_na$ID)
+length(canopy_nar$ID)
 ```
 #i.e 399997 results so 3 na values removed (also shows good quality data as very little na values)
+
+
+```{r}
+mean(canopy_nar$tri)
+```
+#i.e 0.4691957 getting real values now 
