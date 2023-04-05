@@ -24,7 +24,7 @@ hist(kat_high_error_evenbetter$dem_error, xlab = "DEM Error (m)", main = NULL)
 ```{r}
 kat_high_error_evenbetter %>%
   ggplot(aes(x=dem_error, y=tri_1)) +
-  geom_point(shape=20, color="blue")+
+  geom_point(size=0.5,shape=20, color="blue")+
   geom_smooth(method=lm, color="brown2") +
   ggtitle("Relationship between TRI and DEM Error for Katoomba outliers ") +
   xlab("DEM Error (m)") + ylab("TRI")
@@ -34,10 +34,27 @@ kat_high_error_evenbetter %>%
 ```{r}
 kat_high_error_evenbetter %>%
   ggplot(aes(x=canopy_diff_1, y=tri_1)) +
-  geom_point(shape=20, color="blue")+
+  geom_point(size=0.5, shape=20, color="blue")+
   geom_smooth(method=lm, color="brown2") +
   ggtitle("Relationship between TRI and Canopy Error for Katoomba outliers ") +
   xlab("Canopy Error (m)") + ylab("TRI")
+```
+
+```{r}
+kat_high_error_evenbetter %>%
+  ggplot(aes(x=lid2avgfirstreturn, y=tri_1)) +
+  geom_point(shape=20, color="blue")+
+  geom_smooth(method=lm, color="brown2") +
+  ggtitle("Relationship between Average First Return and Canopy Error for Katoomba outliers ") +
+  xlab("Canopy Error (m)") + ylab("Average First Return")
+```
+
+```{r}
+ggplot(kat_high_error_evenbetter, aes(x = dem_error, y = tri_1, color = lid2avgfirstreturn)) +
+  geom_smooth(method=lm, color="brown2") +
+geom_point()
+
+
 ```
 
 
