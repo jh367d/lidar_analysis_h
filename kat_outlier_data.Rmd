@@ -25,6 +25,10 @@ hist(kat_high_error_evenbetter$dem_error, xlab = "DEM Error (m)", main = NULL)
 kat_high_error_evenbetter %>%
   ggplot(aes(x=dem_error, y=tri_1)) +
   geom_point(shape=20, color="blue")+
-  geom_smooth(method=lm, color="brown2")
+  geom_smooth(method=lm, color="brown2") +
+  ggtitle("Relationship between TRI and DEM Error for Katoomba outliers ") +
+  xlab("DEM Error (m)") + ylab("TRI")
+
 ```
+
 
