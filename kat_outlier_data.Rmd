@@ -1,0 +1,18 @@
+---
+title: "kat outliers"
+author: "Jack"
+date: "2023-03-05"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#for the Katomoba dataset there is a large amount of outliers where cliff line areas are over or underestimated 
+
+```{r}
+kat_high_error_evenbetter <- read_excel("~/Documents/R/hons_local_r/update/v2/kat_high_error_evenbetter.xlsx")
+View(kat_high_error_evenbetter)
+```
+

@@ -176,3 +176,10 @@ hist(canopy_nar$dem_error, xlab = "dem_error", main = NULL)
 
 ```
 
+```{r}
+canopy_nar %>%
+  ggplot(aes(x=avg_1st_return, y=tri)) +
+  geom_point()
+```
+#lid 2 avg 1st return, filter say tri at 0.1 = low error in dme or fpc, or camopy, then high say 0.8 = mabye mroe error
+#then a multivariate way of displaying
