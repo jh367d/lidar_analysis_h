@@ -16,3 +16,15 @@ kat_high_error_evenbetter <- read_excel("~/Documents/R/hons_local_r/update/v2/ka
 View(kat_high_error_evenbetter)
 ```
 
+
+```{r}
+hist(kat_high_error_evenbetter$dem_error, xlab = "DEM Error (m)", main = NULL)
+```
+
+```{r}
+kat_high_error_evenbetter %>%
+  ggplot(aes(x=dem_error, y=tri_1)) +
+  geom_point(shape=20, color="blue")+
+  geom_smooth(method=lm, color="brown2")
+```
+
