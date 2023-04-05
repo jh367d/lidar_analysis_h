@@ -31,4 +31,13 @@ kat_high_error_evenbetter %>%
 
 ```
 
+```{r}
+kat_high_error_evenbetter %>%
+  ggplot(aes(x=canopy_diff_1, y=tri_1)) +
+  geom_point(shape=20, color="blue")+
+  geom_smooth(method=lm, color="brown2") +
+  ggtitle("Relationship between TRI and Canopy Error for Katoomba outliers ") +
+  xlab("Canopy Error (m)") + ylab("TRI")
+```
+
 
