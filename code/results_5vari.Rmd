@@ -318,5 +318,17 @@ ggplot(nokatdata, aes(x = fpcdiff_1, y = lid2avgfirstreturn, color =ID))+
   labs(color = "Study Area")  
 ```
 
-
+#now density 
+```{r}
+ggplot(update6factorsdata2, aes(x=dem_error, y=tri_1) ) +
+  geom_bin2d(bins = 70) +
+  scale_fill_continuous(type = "viridis") +
+  theme_bw()
+```
+ggplot(update6factorsdata2, aes(x = dem_error, y = tri_1, color =ID))+
+  geom_point(size=0.5, shape=20)+
+  geom_smooth(method=lm, color="brown2") +
+  ggtitle("Relationship between TRI and DEM Error") +
+  xlab("DEM Error (m)") + ylab("TRI")+
+  labs(color = "Study Area")  
 
