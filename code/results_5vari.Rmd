@@ -183,3 +183,36 @@ canopy_nar %>%
 ```
 #lid 2 avg 1st return, filter say tri at 0.1 = low error in dme or fpc, or camopy, then high say 0.8 = mabye mroe error
 #then a multivariate way of displaying
+#mabye hex method 
+```{r}
+lidarovlbara_Merge_TableToExcel <- read_excel("~/Documents/R/hons_local_r/update/v2/lidarovlbara_Merge_TableToExcel.xlsx")
+```
+
+
+```{r}
+unique(lidarovlbara_Merge_TableToExcel$ID)
+```
+
+```{r}
+lidarovlbara_Merge_TableToExcel$ID <- as.factor(lidarovlbara_Merge_TableToExcel$ID)
+```
+
+```{r}
+class(lidarovlbara_Merge_TableToExcel$ID)
+```
+
+```{r}
+canopy_nar_update <- na.omit(lidarovlbara_Merge_TableToExcel)
+```
+
+```{r}
+std(canopy_nar_update$dem_error )
+```
+
+
+```{r}
+ggplot(canopy_nar_update, aes(x = fpcdiff_1, y = tri_1, color = ID)) +
+  geom_point(size=0.5, shape=20)+
+  geom_smooth(method=lm, color="brown2")
+```
+

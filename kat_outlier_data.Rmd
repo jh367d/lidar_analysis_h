@@ -52,9 +52,18 @@ kat_high_error_evenbetter %>%
 ```{r}
 ggplot(kat_high_error_evenbetter, aes(x = dem_error, y = tri_1, color = lid2avgfirstreturn)) +
   geom_smooth(method=lm, color="brown2") +
-geom_point()
+geom_point(size=1, shape=20,) +
+  ggtitle("Relationship between TRI and DEM Error for Katoomba outliers ") +
+  xlab("DEM Error (m)") + ylab("TRI")
 
 
+```
+```{r}
+ggplot(kat_high_error_evenbetter, aes(x = fpcdiff_1, y = tri_1, color = lid2avgfirstreturn)) +
+  geom_point(size=0.5, shape=20, color="blue")+
+  geom_smooth(method=lm, color="brown2") +
+  ggtitle("Relationship between TRI and FPC Error for Katoomba outliers ") +
+  xlab("FPC Error (m)") + ylab("TRI")
 ```
 
 
