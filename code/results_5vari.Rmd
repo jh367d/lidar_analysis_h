@@ -404,4 +404,24 @@ ggplot(update6factorsdata2, aes(x=dem_error, y=lid2avgfirstreturn) ) +
   xlab("DEM Error (m)") + ylab("LiDAR 2 Average First Return")+
   geom_smooth(method=lm, color="brown2")
 ```
+#now boxplot of dem error by site
+```{r}
+ggplot(update6factorsdata2, aes(x=ID, y=dem_error, fill=ID)) + 
+    geom_boxplot(lwd=0.8)+ 
+  theme(legend.position="none")
+```
+
+```{r}
+ggplot(update6factorsdata2, aes(x=ID, y=dem_error, fill=ID)) +
+geom_violin()
+```
+
+```{r}
+ggplot(update6factorsdata2, aes(x=ID, y=dem_error, fill=ID)) + 
+    geom_boxplot(alpha=0.3)+
+  theme(legend.position="none")+
+  scale_fill_brewer(palette="BuPu")+
+  ggtitle("Distribution of DEM Error between Study Areas") +
+  ylab("DEM Error (m)") + xlab("Study Areas")
+```
 
