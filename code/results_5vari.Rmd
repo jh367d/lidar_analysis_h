@@ -386,12 +386,22 @@ ggplot(update6factorsdata2, aes(x=fpcdiff_1, y=lid2avgfirstreturn) ) +
 ```
 
 ```{r}
-ggplot(update6factorsdata2, aes(x=fpcdiff_1, y=lid2avgfirstreturn) ) +
+ggplot(update6factorsdata2, aes(x=canopy_diff_1, y=lid2avgfirstreturn) ) +
   geom_hex(bins = 70) +
   scale_fill_continuous(type = "viridis") +
   theme_bw()+
-  ggtitle("Relationship between LiDAR 2 Average First Return and FPC Error") +
-  xlab("FPC Error (m)") + ylab("LiDAR 2 Average First Return")+
+  ggtitle("Relationship between LiDAR 2 Average First Return and Canopy Error") +
+  xlab("Canopy Error (m)") + ylab("LiDAR 2 Average First Return")+
+  geom_smooth(method=lm, color="brown2")
+```
+
+```{r}
+ggplot(update6factorsdata2, aes(x=dem_error, y=lid2avgfirstreturn) ) +
+  geom_hex(bins = 70) +
+  scale_fill_continuous(type = "viridis") +
+  theme_bw()+
+  ggtitle("Relationship between LiDAR 2 Average First Return and DEM Error") +
+  xlab("DEM Error (m)") + ylab("LiDAR 2 Average First Return")+
   geom_smooth(method=lm, color="brown2")
 ```
 
