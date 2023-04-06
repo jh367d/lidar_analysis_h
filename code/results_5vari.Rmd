@@ -443,4 +443,45 @@ geom_violin()+
   ylab("DEM Error (m)") + xlab("Study Areas")+
   theme(legend.position="none")
 ```
+```{r}
+ggplot(update6factorsdata2, aes(x=ID, y=fpcdiff_1, fill=ID)) + 
+    geom_violin()+
+  ggtitle("Distribution of FPC Error between Study Areas") +
+  ylab("FPC Error (m)") + xlab("Study Areas")+
+  theme(legend.position="none")
+```
+
+```{r}
+ggplot(update6factorsdata2, aes(x=ID, y=fpcdiff_1, fill=ID)) + 
+    geom_boxplot()+
+  ggtitle("Distribution of FPC Error between Study Areas") +
+  ylab("FPC Error (m)") + xlab("Study Areas")+
+  theme(legend.position="none")
+```
+
+
+
+
+
+```{r}
+ggplot(update6factorsdata2, aes(x=ID, y=canopy_diff_1, fill=ID)) + 
+    geom_boxplot()+
+  ggtitle("Distribution of Canopy Error between Study Areas") +
+  ylab("Canopy Error (m)") + xlab("Study Areas")+
+  theme(legend.position="none")
+```
+```{r}
+ggplot(update6factorsdata2, aes(x=ID, y=canopy_diff_1, fill=ID)) + 
+    geom_violin()+
+  ggtitle("Distribution of Canopy Error between Study Areas") +
+  ylab("Canopy Error (m)") + xlab("Study Areas")+
+  theme(legend.position="none")
+
+```
  
+ 
+#now combine for publish
+```{r}
+
+```
+
