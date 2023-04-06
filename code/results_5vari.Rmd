@@ -208,11 +208,20 @@ canopy_nar_update <- na.omit(lidarovlbara_Merge_TableToExcel)
 ```{r}
 std(canopy_nar_update$dem_error )
 ```
+```{r}
+levels(canopy_nar_update$ID) <- c('Baradine', 'Goondiwindi', 'Gwabegar', 'Katoomba')
+```
 
 
 ```{r}
-ggplot(canopy_nar_update, aes(x = fpcdiff_1, y = tri_1, color = ID)) +
+ggplot(canopy_nar_update, aes(x = fpcdiff_1, y = tri_1, color =ID))+
   geom_point(size=0.5, shape=20)+
-  geom_smooth(method=lm, color="brown2")
+  geom_smooth(method=lm, color="brown2") +
+  ggtitle("Relationship between TRI and FPC Error") +
+  xlab("FPC Error (m)") + ylab("TRI")+
+  labs(color = "Study Area")                     
+  
+  
 ```
+
 
