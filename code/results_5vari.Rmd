@@ -249,5 +249,14 @@ ggplot(update6factorsdata2, aes(x = canopy_diff_1, y = tri_1, color =ID))+
   xlab("Canopy Error (m)") + ylab("TRI")+
   labs(color = "Study Area")  
 ```
+#now compare lid2 diff
+```{r}
+ggplot(update6factorsdata2, aes(x = canopy_diff_1, y = lid2avgfirstreturn, color =ID))+
+  geom_point(size=0.5, shape=20)+
+  geom_smooth(method=lm, color="brown2") +
+  ggtitle("Relationship between LiDAR 2 Average First Return and Canopy Error") +
+  xlab("Canopy Error (m)") + ylab("LiDAR 2 Average First Return")+
+  labs(color = "Study Area")  
+```
 
 
