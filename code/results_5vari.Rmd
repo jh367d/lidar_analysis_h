@@ -331,7 +331,8 @@ ggplot(update6factorsdata2, aes(x=dem_error, y=tri_1) ) +
   scale_fill_continuous(type = "viridis") +
   theme_bw()+
   ggtitle("Relationship between TRI and DEM Error") +
-  xlab("DEM Error (m)") + ylab("TRI")
+  xlab("DEM Error (m)") + ylab("TRI")+
+  geom_smooth(method=lm, color="brown2")
 ```
 
 
@@ -359,7 +360,8 @@ ggplot(update6factorsdata2, aes(x=canopy_diff_1, y=tri_1) ) +
   scale_fill_continuous(type = "viridis") +
   theme_bw()+
   ggtitle("Relationship between TRI and Canopy Error") +
-  xlab("Canopy Error (m)") + ylab("TRI")
+  xlab("Canopy Error (m)") + ylab("TRI")+
+  geom_smooth(method=lm, color="brown2")
 ```
 ```{r}
 
@@ -368,7 +370,28 @@ ggplot(update6factorsdata2, aes(x=fpcdiff_1, y=tri_1) ) +
   scale_fill_continuous(type = "viridis") +
   theme_bw()+
   ggtitle("Relationship between TRI and FPC Error") +
-  xlab("FPC Error (m)") + ylab("TRI")
+  xlab("FPC Error (m)") + ylab("TRI")+
+  geom_smooth(method=lm, color="brown2")
 ```
 
+
+```{r}
+ggplot(update6factorsdata2, aes(x=fpcdiff_1, y=lid2avgfirstreturn) ) +
+  geom_hex(bins = 70) +
+  scale_fill_continuous(type = "viridis") +
+  theme_bw()+
+  ggtitle("Relationship between LiDAR 2 Average First Return and FPC Error") +
+  xlab("FPC Error (m)") + ylab("LiDAR 2 Average First Return")+
+  geom_smooth(method=lm, color="brown2")
+```
+
+```{r}
+ggplot(update6factorsdata2, aes(x=fpcdiff_1, y=lid2avgfirstreturn) ) +
+  geom_hex(bins = 70) +
+  scale_fill_continuous(type = "viridis") +
+  theme_bw()+
+  ggtitle("Relationship between LiDAR 2 Average First Return and FPC Error") +
+  xlab("FPC Error (m)") + ylab("LiDAR 2 Average First Return")+
+  geom_smooth(method=lm, color="brown2")
+```
 
