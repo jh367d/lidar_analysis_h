@@ -353,4 +353,22 @@ ggplot(update6factorsdata2, aes(x=dem_error, y=tri_1) ) +
   xlab("DEM Error (m)") + ylab("TRI")
 ```
 
+```{r}
+ggplot(update6factorsdata2, aes(x=canopy_diff_1, y=tri_1) ) +
+  geom_hex(bins = 70) +
+  scale_fill_continuous(type = "viridis") +
+  theme_bw()+
+  ggtitle("Relationship between TRI and Canopy Error") +
+  xlab("Canopy Error (m)") + ylab("TRI")
+```
+```{r}
+
+ggplot(update6factorsdata2, aes(x=fpcdiff_1, y=tri_1) ) +
+  geom_hex(bins = 70) +
+  scale_fill_continuous(type = "viridis") +
+  theme_bw()+
+  ggtitle("Relationship between TRI and FPC Error") +
+  xlab("FPC Error (m)") + ylab("TRI")
+```
+
 
