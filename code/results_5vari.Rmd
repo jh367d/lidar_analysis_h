@@ -267,6 +267,18 @@ ggplot(update6factorsdata2, aes(x = dem_error, y = lid2avgfirstreturn, color =ID
   xlab("DEM Error (m)") + ylab("LiDAR 2 Average First Return")+
   labs(color = "Study Area") 
 ```
+
+```{r}
+ggplot(update6factorsdata2, aes(x = fpcdiff_1, y = lid2avgfirstreturn, color =ID))+
+  geom_point(size=0.5, shape=20)+
+  geom_smooth(method=lm, color="brown2") +
+  ggtitle("Relationship between LiDAR 2 Average First Return and FPC Error") +
+  xlab("FPC Error (m)") + ylab("LiDAR 2 Average First Return")+
+  labs(color = "Study Area")  
+```
+
+
+
 #now without kat data
 ```{r}
 unique(update6factorsdata2)
@@ -277,3 +289,34 @@ unique(update6factorsdata2)
 unique(nokatdata$ID)
 ```
 #no kat 
+
+```{r}
+ggplot(nokatdata, aes(x = dem_error, y = lid2avgfirstreturn, color =ID))+
+  geom_point(size=0.5, shape=20)+
+  geom_smooth(method=lm, color="brown2") +
+  ggtitle("Relationship between LiDAR 2 Average First Return and DEM Error") +
+  xlab("DEM Error (m)") + ylab("LiDAR 2 Average First Return")+
+  labs(color = "Study Area") 
+```
+
+```{r}
+ggplot(nokatdata, aes(x = canopy_diff_1, y = lid2avgfirstreturn, color =ID))+
+  geom_point(size=0.5, shape=20)+
+  geom_smooth(method=lm, color="brown2") +
+  ggtitle("Relationship between LiDAR 2 Average First Return and Canopy Error") +
+  xlab("Canopy Error (m)") + ylab("LiDAR 2 Average First Return")+
+  labs(color = "Study Area")  
+```
+
+
+```{r}
+ggplot(nokatdata, aes(x = fpcdiff_1, y = lid2avgfirstreturn, color =ID))+
+  geom_point(size=0.5, shape=20)+
+  geom_smooth(method=lm, color="brown2") +
+  ggtitle("Relationship between LiDAR 2 Average First Return and FPC Error") +
+  xlab("FPC Error (m)") + ylab("LiDAR 2 Average First Return")+
+  labs(color = "Study Area")  
+```
+
+
+
