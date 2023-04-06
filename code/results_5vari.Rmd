@@ -259,4 +259,21 @@ ggplot(update6factorsdata2, aes(x = canopy_diff_1, y = lid2avgfirstreturn, color
   labs(color = "Study Area")  
 ```
 
+```{r}
+ggplot(update6factorsdata2, aes(x = dem_error, y = lid2avgfirstreturn, color =ID))+
+  geom_point(size=0.5, shape=20)+
+  geom_smooth(method=lm, color="brown2") +
+  ggtitle("Relationship between LiDAR 2 Average First Return and DEM Error") +
+  xlab("DEM Error (m)") + ylab("LiDAR 2 Average First Return")+
+  labs(color = "Study Area") 
+```
+#now without kat data
+```{r}
+unique(update6factorsdata2)
+```
 
+
+```{r}
+unique(nokatdata$ID)
+```
+#no kat 
