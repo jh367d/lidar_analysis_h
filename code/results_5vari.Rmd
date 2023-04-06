@@ -427,5 +427,20 @@ ggplot(update6factorsdata2, aes(x=ID, y=dem_error, fill=ID)) +
   ggtitle("Distribution of DEM Error between Study Areas") +
   ylab("DEM Error (m)") + xlab("Study Areas")
 ```
-
+#with no kat
+```{r}
+ggplot(nokatdata, aes(x=ID, y=dem_error, fill=ID)) + 
+    geom_boxplot(alpha=0.3)+
+  theme(legend.position="none")+
+  scale_fill_brewer(palette="BuPu")+
+  ggtitle("Distribution of DEM Error between Study Areas") +
+  ylab("DEM Error (m)") + xlab("Study Areas")
+```
+```{r}
+ggplot(nokatdata, aes(x=ID, y=dem_error, fill=ID)) +
+geom_violin()+
+  ggtitle("Distribution of DEM Error between Study Areas") +
+  ylab("DEM Error (m)") + xlab("Study Areas")+
+  theme(legend.position="none")
+```
  
