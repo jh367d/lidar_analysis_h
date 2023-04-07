@@ -479,8 +479,7 @@ ggplot(update6factorsdata2, aes(x=ID, y=canopy_diff_1, fill=ID)) +
 
 ```
  
- 
-#now combine for publish
+#with absolute error
 ```{r}
 
 ```
