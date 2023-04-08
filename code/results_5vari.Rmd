@@ -637,3 +637,29 @@ file_update6factorsdata22update6factorsdata2lid2[2,9]
 ```
 #lowavgval is 0>0.5
 
+
+```{r}
+ggplot(lowavgval, aes(x = fpcdiff_1, y = tri_1, color =ID))+
+  geom_point(size=0.5, shape=20)+
+  geom_smooth(method=lm, color="brown2") +
+  ggtitle("Relationship between TRI and FPC Error for LiDAR 2 Average First Return 0>0.5  ") +
+  xlab("FPC Error (m)") + ylab("TRI")+
+  labs(color = "Study Area")   
+
+  
+```
+```{r}
+ggplot(lowavgval, aes(x = dem_error, y = tri_1, color =ID))+
+  geom_point(size=0.5, shape=20)+
+  geom_smooth(method=lm, color="brown2") +
+  ggtitle("Relationship between TRI and DEM Error for LiDAR 2 Average First Return 0>0.5") +
+  xlab("DEM Error (m)") + ylab("TRI")+
+  labs(color = "Study Area")    
+```
+
+
+
+```{r}
+
+```
+
