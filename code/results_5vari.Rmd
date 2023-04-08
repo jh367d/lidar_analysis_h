@@ -702,5 +702,32 @@ ggplot(onepoinrfivetotwo, aes(x = dem_error, y = tri_1, color =ID))+
   xlab("DEM Error (m)") + ylab("TRI")+
   labs(color = "Study Area") 
 ```
+```{r}
+twototwopointfive<-file_update6factorsdata22update6factorsdata2lid2[file_update6factorsdata22update6factorsdata2lid2$group =="2>2.5",]
 
+```
+
+```{r}
+ggplot(twototwopointfive, aes(x = dem_error, y = tri_1, color =ID))+
+  geom_point(size=0.5, shape=20)+
+  geom_smooth(method=lm, color="brown2") +
+  ggtitle("Relationship between TRI and DEM Error for LiDAR 2 Average First Return 2>2.5") +
+  xlab("DEM Error (m)") + ylab("TRI")+
+  labs(color = "Study Area") 
+```
+
+```{r}
+twoandover<-file_update6factorsdata22update6factorsdata2lid2[file_update6factorsdata22update6factorsdata2lid2$group =="2.5>",]
+
+```
+
+
+```{r}
+ggplot(twoandover, aes(x = dem_error, y = tri_1, color =ID))+
+  geom_point(size=0.5, shape=20)+
+  geom_smooth(method=lm, color="brown2") +
+  ggtitle("Relationship between TRI and DEM Error for LiDAR 2 Average First Return 2.5>") +
+  xlab("DEM Error (m)") + ylab("TRI")+
+  labs(color = "Study Area") 
+```
 
