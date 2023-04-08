@@ -497,4 +497,137 @@ ggplot(data = update6factorsdata2, mapping = aes(x=lid2avgfirstreturn)) +
   labs(x='lid2avgfirstreturn') +
   theme_minimal()
 ```
+#create breaks
+```{r}
+breaks <- c(0,1,2,3,4,5)
+```
+
+```{r}
+tags <- c("[0)","[1)", "[2)", "[3)", "[4)")
+```
+
+```{r}
+
+```
+
+
+```{r}
+grouped_tags <- cut(update6factorsdata2$lid2avgfirstreturn, 
+                  breaks=breaks, 
+                  include.lowest=TRUE, 
+                  right=FALSE,
+                  labels=tags)
+summary(grouped_tags)
+```
+
+#get rid of na's
+```{r}
+update6factorsdata2lid2 <- na.omit(update6factorsdata2)
+```
+
+```{r}
+grouped_tags2 <- cut(update6factorsdata2lid2$lid2avgfirstreturn, 
+                  breaks=breaks, 
+                  include.lowest=TRUE, 
+                  right=FALSE)
+summary(grouped_tags2)
+```
+
+```{r}
+lid2avg1streturn_group <- factor(grouped_tags, 
+                           levels = labels,
+                           ordered = TRUE)
+```
+
+```{r}
+max
+```
+
+
+```{r}
+ggplot(data = as_tibble(grouped_tags), mapping = aes(x=value)) + 
+  geom_bar(fill="bisque",color="white",alpha=0.7) + 
+  stat_count(geom="text", aes(label=sprintf("%.4f",..count../length(grouped_tags))), vjust=-0.5) +
+  labs(x='LiDAR 2 Average First Return') +
+  theme_minimal()
+```
+```{r}
+tags <- c("[0-0.5)","[0.5-1)", "[1-1.5)", "[1.5-2)", "[2-max)")
+```
+
+```{r}
+breaks <- c(0.5,1,1.5,2,2.5)
+```
+
+
+```{r}
+v <- update6factorsdata2 %>% select(lid2avgfirstreturn,tri_1)  
+vgroup <- as_tibble(v) %>% 
+  mutate(tag = case_when(
+    lid2avgfirstreturn < 0.5 ~ tags[0-0.5],
+    lid2avgfirstreturn >= 0.5 & lid2avgfirstreturn < 1 ~ tags[0.5-1],
+    lid2avgfirstreturn >= 1 & lid2avgfirstreturn < 1.5 ~ tags[1-1.5],
+    lid2avgfirstreturn >= 1.5 & lid2avgfirstreturn < 2 ~ tags[1.5-2],
+    lid2avgfirstreturn >= 2 & lid2avgfirstreturn < 2.5 ~ tags[2-max]
+   ))
+summary(vgroup)
+```
+```{r}
+attach(update6factorsdata2)
+```
+
+
+```{r}
+lid2group <- cut(lid2avgfirstreturn, breaks =c(0,0.5,1,1.5,2,2.5,16 ), labels =c("0-0.5","0.5-1", "1-1.5", "1.5-2", "2-2.5", "2-max" ))
+```
+
+```{r}
+lid2group2 <- cut(lid2avgfirstreturn, breaks=4) 
+```
+
+
+```{r}
+summary(lid2group)
+```
+
+```{r}
+hist(as.numeric(lid2group))
+```
+```{r}
+ggplot(data = as_tibble(lid2group), mapping = aes(x=lid2avgfirstreturn)) + 
+  geom_bar()
+```
+```{r}
+plot(lid2group)
+```
+```{r}
+x1 <- table(lid2group)
+barplot(x1[order(x1, decreasing = TRUE)])
+```
+
+```{r}
+
+levels(lid2group)
+```
+
+```{r}
+glimpse(lid2group)
+```
+
+```{r}
+update6factorsdata2$lid2avgfirstreturn <- cut(update6factorsdata2$lid2avgfirstreturn,
+                                              breaks = c(-Inf
+                                                         ,0.5,1,1.5,2,2.5, Inf),
+                                              labels =c("0-0.5","0.5-1", "1-1.5", "1.5-2", "2-2.5", "2+"),
+                                              )
+```
+```{r}
+
+ggplot(update6factorsdata2, aes(x=lid2avgfirstreturn, y=tri_1)) + 
+    geom_boxplot()
+```
+```{r}
+ggplot(update6factorsdata2, aes(x=tri_1, y=lid2avgfirstreturn))+
+geom_point()
+```
 
