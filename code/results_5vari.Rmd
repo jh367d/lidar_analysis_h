@@ -660,6 +660,47 @@ ggplot(lowavgval, aes(x = dem_error, y = tri_1, color =ID))+
 
 
 ```{r}
-
+ lowmedavgval<-file_update6factorsdata22update6factorsdata2lid2[file_update6factorsdata22update6factorsdata2lid2$group =="0.5>1",]
 ```
+#351 obs at 0.5>1
+
+```{r}
+ggplot(lowmedavgval, aes(x = dem_error, y = tri_1, color =ID))+
+  geom_point(size=0.5, shape=20)+
+  geom_smooth(method=lm, color="brown2") +
+  ggtitle("Relationship between TRI and DEM Error for LiDAR 2 Average First Return 0.5>1") +
+  xlab("DEM Error (m)") + ylab("TRI")+
+  labs(color = "Study Area") 
+```
+```{r}
+unique(file_update6factorsdata22update6factorsdata2lid2$group)
+```
+
+
+```{r}
+ onetoonepointfive<-file_update6factorsdata22update6factorsdata2lid2[file_update6factorsdata22update6factorsdata2lid2$group =="1>1.5",]
+```
+
+```{r}
+ggplot(onetoonepointfive, aes(x = dem_error, y = tri_1, color =ID))+
+  geom_point(size=0.5, shape=20)+
+  geom_smooth(method=lm, color="brown2") +
+  ggtitle("Relationship between TRI and DEM Error for LiDAR 2 Average First Return 1>1.5") +
+  xlab("DEM Error (m)") + ylab("TRI")+
+  labs(color = "Study Area") 
+```
+
+```{r}
+ onepoinrfivetotwo<-file_update6factorsdata22update6factorsdata2lid2[file_update6factorsdata22update6factorsdata2lid2$group =="1.5>2",]
+```
+
+```{r}
+ggplot(onepoinrfivetotwo, aes(x = dem_error, y = tri_1, color =ID))+
+  geom_point(size=0.5, shape=20)+
+  geom_smooth(method=lm, color="brown2") +
+  ggtitle("Relationship between TRI and DEM Error for LiDAR 2 Average First Return 1.5>2") +
+  xlab("DEM Error (m)") + ylab("TRI")+
+  labs(color = "Study Area") 
+```
+
 
