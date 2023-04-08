@@ -627,7 +627,13 @@ ggplot(update6factorsdata2, aes(x=lid2avgfirstreturn, y=tri_1)) +
     geom_boxplot()
 ```
 ```{r}
-ggplot(update6factorsdata2, aes(x=tri_1, y=lid2avgfirstreturn))+
-geom_point()
+head(file_update6factorsdata22update6factorsdata2lid2)
 ```
+```{r}
+file_update6factorsdata22update6factorsdata2lid2[2,9]
+```
+```{r}
+ lowavgval<-file_update6factorsdata22update6factorsdata2lid2[file_update6factorsdata22update6factorsdata2lid2$group =="0>0.5",]
+```
+#lowavgval is 0>0.5
 
