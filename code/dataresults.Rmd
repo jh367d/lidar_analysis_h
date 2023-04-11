@@ -125,3 +125,29 @@ canopy_nar %>%
 boxplot(canopy_nar$canopydiff)
 ```
 #again same for difference in canopy 
+
+```{r}
+canopy_nar %>%
+  filter(canopy_nar$TRI <2)
+```
+#i.e down to 382524 records
+
+```{r}
+filterde1 <- canopy_nar %>%
+  filter(canopy_nar$TRI <2)
+
+```
+
+#plot this 
+
+```{r}
+boxplot(filterde1$TRI)
+```
+
+```{r}
+filterde1neg <- subset(filterde1, factor(TRI)>= 0)
+```
+```{r}
+data_new2 <- na.omit(data_new1) 
+```
+

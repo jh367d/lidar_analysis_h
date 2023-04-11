@@ -38,3 +38,10 @@ ggplot(update6factorsdata2, aes(x = dem_error, y = tri_1, color =ID))+
   ggtitle("Relationship between TRI and DEM Error") +
   xlab("DEM Error (m)") + ylab("TRI")+
   labs(color = "Study Area")  
+
+ggplot(update6factorsdata2, aes(x = canopy_diff_1, y = tri_1, color =ID))+
+  geom_point(size=0.5, shape=20)+
+  geom_smooth(method=lm, color="brown2") +
+  ggtitle("Relationship between TRI and Canopy Error") +
+  xlab("Canopy Error (m)") + ylab("TRI")+
+  labs(color = "Study Area")  
