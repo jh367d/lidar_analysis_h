@@ -331,8 +331,7 @@ ggplot(update6factorsdata2, aes(x=dem_error, y=tri_1) ) +
   scale_fill_continuous(type = "viridis") +
   theme_bw()+
   ggtitle("Relationship between TRI and DEM Error") +
-  xlab("DEM Error (m)") + ylab("TRI")+
-  geom_smooth(method=lm, color="brown2")
+  xlab("DEM Error (m)") + ylab("TRI")
 ```
 
 
@@ -729,5 +728,225 @@ ggplot(twoandover, aes(x = dem_error, y = tri_1, color =ID))+
   ggtitle("Relationship between TRI and DEM Error for LiDAR 2 Average \n First Returns from 2.5 to max per") +
   xlab("DEM Error (m)") + ylab("TRI")+
   labs(color = "Study Area") 
+```
+```{r}
+t.test(canopy_nar_update2$dem_error, mu = 0.3)
+```
+
+```{r}
+hist(update6factorsdata2$dem_error, xlab = "DEM Error", main = NULL)
+abline(v = 0.3, col = "red")
+```
+```{r}
+lm(dem_error ~ lid2avgfirstreturn, data = canopy_nar_update2)
+```
+
+```{r}
+model <- lm(dem_error ~ lid2avgfirstreturn, data = canopy_nar_update2)
+summary(model)
+```
+#avg 1st retrun as fuction of dem error is =
+#avg1streturn=  0.091706 + 0.0005723.demerror + ε
+ 
+```{r}
+confint(model)
+```
+ 
+
+```{r}
+plot(model, which = 1)
+```
+
+```{r}
+par(mfrow = c(1, 2)) # This code put two plots in the same window
+hist(model$residuals) # Histogram of residuals
+plot(model, which = 2) # Quantile plot
+```
+```{r}
+plot(dem_error ~ lid2avgfirstreturn, data = canopy_nar_update2, xlab = "Average First Returns per m²", ylab = "DEM Error (m)", pch = 16)
+abline(model, col = "red")
+```
+
+#0.1028 97.5% of dem 1st return
+
+
+```{r}
+#filter below 0.1028
+erorreturn <-filter(canopy_nar_update2, lid2avgfirstreturn < 0.1028265 )
+```
+
+```{r}
+newdata3 <- subset(canopy_nar_update2, lid2avgfirstreturn <0.010) 
+
+```
+
+```{r}
+ggplot(newdata3, aes(x = dem_error, y = lid2avgfirstreturn))+
+  geom_point(size=0.5, shape=20)
+```
+```{r}
+
+```
+
+
+```{r}
+threshold <- quantile(canopy_nar_update2$lid2avgfirstreturn, 0.95)
+```
+
+```{r}
+threshold
+```
+
+```{r}
+newdat43 <- subset(canopy_nar_update2, lid2avgfirstreturn <0.7777778) 
+```
+
+
+```{r}
+ggplot(newdat43, aes(x = dem_error, y = lid2avgfirstreturn))+
+  geom_point(size=0.5, shape=20)+
+  geom_smooth(method=lm, color="brown2") 
+```
+```{r}
+overacuatlerror <- subset(file_update6factorsdata22update6factorsdata2lid2, dem_error >0.3) 
+```
+
+```{r}
+ggplot(overacuatlerror, aes(x = dem_error, y = lid2avgfirstreturn))+
+  geom_point(size=0.5, shape=20)+
+  geom_smooth(method=lm, color="brown2") 
+```
+
+```{r}
+thresholde <- quantile(overacuatlerror$lid2avgfirstreturn, 0.95)
+```
+
+```{r}
+ewdat43 <- subset(overacuatlerror, lid2avgfirstreturn <0.7777778) 
+```
+
+```{r}
+ggplot(ewdat43, aes(x = dem_error, y = lid2avgfirstreturn))+
+  geom_point(size=0.5, shape=20)+
+  geom_smooth(method=lm, color="brown2") 
+```
+
+
+
+
+
+
+```{r}
+summary(overacuatlerror$lid2avgfirstreturn)
+```
+```{r}
+hist(overacuatlerror$lid2avgfirstreturn)
+```
+
+#start again
+```{r}
+lm(lid2avgfirstreturn ~ dem_error, data = overacuatlerror)
+```
+```{r}
+model34 <- lm(lid2avgfirstreturn ~ dem_error, data = overacuatlerror)
+summary(model34)
+```
+```{r}
+confint(model34)
+```
+
+```{r}
+plot(model34, which = 1)
+```
+```{r}
+par(mfrow = c(1, 2)) # This code put two plots in the same window
+hist(model34$residuals) # Histogram of residuals
+plot(model34, which = 2) # Quantile plot
+```
+```{r}
+plot(lid2avgfirstreturn ~ dem_error, data = overacuatlerror, xlab = "DEM Error (m)", ylab = "LiDAR 2 Average First Return per m²", pch = 16, col="blue", main="Relationship between LiDAR 2 Average First Return per m² \n and DEM Error")
+abline(model34, col = "brown2")
+```
+```{r}
+ggplot(overacuatlerror, aes(x=dem_error, y=lid2avgfirstreturn) ) +
+  geom_point( shape=20)+
+  ggtitle("Relationship between LiDAR 2 Average First Return and DEM Error") +
+  xlab("DEM Error (m)") + ylab("LiDAR 2 Average First Return")+
+  geom_smooth(method=lm, color="brown2") 
+```
+
+
+```{r}
+ggplot(overacuatlerror, aes(x = dem_error, y = tri_1, color =ID))+
+  geom_point(size=0.5, shape=20)+
+  geom_smooth(method=lm, color="brown2") +
+  ggtitle("Relationship between TRI and DEM Error for LiDAR 2 Average \n First Return values under 0.310 per m²") +
+  xlab("DEM Error (m)") + ylab("TRI")+
+  labs(color = "Study Area")  
+```
+```{r}
+kat_high <- subset(kat_high_error_evenbetter, lid2avgfirstreturn <0.310) 
+```
+
+
+```{r}
+
+ggplot(kat_high, aes(x = dem_error, y = tri_1))+
+  geom_point(size=0.5, shape=20)+
+  geom_smooth(method=lm, color="brown2") +
+  ggtitle("Relationship between TRI and DEM Error for LiDAR 2 Average \n First Return values under 0.310 per m² for Katoomba outliers") +
+  xlab("DEM Error (m)") + ylab("TRI")+
+  labs(color = "Study Area")  
+
+ 
+```
+```{r}
+kat_highnegsrem <- subset(kat_high, dem_error >0) 
+```
+
+```{r}
+ggplot(kat_highnegsrem, aes(x = dem_error, y = tri_1))+
+  geom_point(size=0.5, shape=20)+
+  geom_smooth(method=lm, color="brown2") +
+  ggtitle("Relationship between TRI and DEM Error for LiDAR 2 Average \n First Return values under 0.310 per m² for Katoomba outliers") +
+  xlab("DEM Error (m)") + ylab("TRI")+
+  labs(color = "Study Area")  
+
+```
+
+
+```{r}
+lm(tri_1 ~ dem_error, data = overacuatlerror)
+```
+
+
+```{r}
+model3e4 <- lm(tri_1 ~ dem_error, data = overacuatlerror)
+summary(model3e4)
+```
+```{r}
+confint(model3e4)
+```
+
+```{r}
+plot(model3e4, which = 1)
+```
+```{r}
+par(mfrow = c(1, 2)) # This code put two plots in the same window
+hist(model3e4$residuals) # Histogram of residuals
+plot(model3e4, which = 2) # Quantile plot
+```
+```{r}
+trihighnegsrem <- subset(overacuatlerror, tri_1 >0.4891572) 
+
+```
+
+```{r}
+ggplot(trihighnegsrem, aes(x = dem_error, y = tri_1))+
+  geom_point(size=0.5, shape=20)+
+  geom_smooth(method=lm, color="brown2") +
+  ggtitle("Relationship between TRI and DEM Error for TRI values over 0.489 ") +
+  xlab("DEM Error (m)") + ylab("TRI")+
+  labs(color = "Study Area")  
 ```
 
